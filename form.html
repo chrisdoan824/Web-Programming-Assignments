@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MH-Care - Book Appointment</title>
-    <style>
+    <!-- <style>
         body {
             font-family: Arial, sans-serif;
         }
@@ -44,7 +44,7 @@
             color: red;
             display: none;
         } 
-    </style>
+    </style> -->
     <script>
         function validateForm() {
             const firstName = document.forms["bookingForm"]["firstName"].value;
@@ -56,12 +56,24 @@
             }
             return true;
         }
+
+        window.onload = function() {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        }
     </script>
 </head>
-<body>
+<body>    
+    <div id="navbar"></div>
     <header>
         <h1>Book a Psychiatry Appointment</h1>
     </header>
+
+
 
     <!-- Navigation -->
     <!-------<nav>
