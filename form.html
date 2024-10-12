@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MH-Care - Book Appointment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #003366;
+        }
+        .container {
+            padding: 20px;
+        }
+        form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+        form input, form select {
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+        }
+        form label {
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            display: none;
+        } 
+    </style>
+    <script>
+        function validateForm() {
+            const firstName = document.forms["bookingForm"]["firstName"].value;
+            const lastName = document.forms["bookingForm"]["lastName"].value;
+            const phone = document.forms["bookingForm"]["phone"].value;
+            if (firstName == "" || lastName == "" || phone == "") {
+                document.getElementById("error").style.display = "block";
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Book a Psychiatry Appointment</h1>
+    </header>
+
+    <!-- Navigation -->
+    <!-------<nav>
+        <a href="index.html">Mental Health -> Finding Help</a>
+        <a href="#">Mental Health -> Brochures</a>
+        <a href="#">Mental Health -> Questionnaire</a>
+        <a href="appointment.html">Services -> Psychiatry -> Book Appointments</a>
+        <a href="#">News -> Press Releases</a>
+        <a href="#">News -> FAQ</a>
+        <a href="#">About -> About Us</a>
+        <a href="#">About -> Our Team</a>
+        <a href="#">About -> Contact Us</a>
+    </nav>----->
+
+    <div class="container">
+        <h2>Fill in the form below to book your appointment:</h2>
+        <form name="bookingForm" onsubmit="return validateForm()">
+            <label for="firstName">First Name (required)</label>
+            <input type="text" id="firstName" name="firstName">
+            
+            <label for="lastName">Last Name (required)</label>
+            <input type="text" id="lastName" name="lastName">
+
+            <label for="phone">Phone Number (required)</label>
+            <input type="text" id="phone" name="phone">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address">
+
+            <label for="city">City</label>
+            <input type="text" id="city" name="city">
+
+            <label for="province">Province</label>
+            <select id="province" name="province">
+                <option value="ON">Ontario</option>
+                <option value="QC">Quebec</option>
+                <!-- Add other provinces -->
+            </select>
+
+            <label for="postalCode">Postal Code</label>
+            <input type="text" id="postalCode" name="postalCode">
+
+            <label for="date1">Desired Date 1</label>
+            <input type="date" id="date1" name="date1">
+
+            <label for="date2">Desired Date 2</label>
+            <input type="date" id="date2" name="date2">
+
+            <label for="timeFrame">Desired Time Frame (1-hour blocks)</label>
+            <select id="timeFrame" name="timeFrame">
+                <option value="9-10am">9:00 AM - 10:00 AM</option>
+                <option value="10-11am">10:00 AM - 11:00 AM</option>
+                <!-- Add more time blocks -->
+            </select>
+
+            <p id="error" class="error">Please fill in all required fields (First Name, Last Name, Phone Number).</p>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
