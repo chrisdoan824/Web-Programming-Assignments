@@ -5,9 +5,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="navbar.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
+  <script>
+    window.onload = function() {
+            fetch('navbar2.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        }
+  </script>
+<!--   <style>
 * {
   box-sizing: border-box;
 }
@@ -61,10 +72,10 @@ body {
     width: 100%;
   }
 }
-</style>
+</style> -->
 </head>
 <body>
-
+<div id="navbar"></div>
 <div class="header">
   <h1>Welcome to the Mental Health and Psychiatry Division</h1>
   <h5>Hotline: 2260001100</h5>
