@@ -4,91 +4,91 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MH Care Main Page</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom CSS for Hover Effect -->
   <link href="css/navbartest2.css" rel="stylesheet">
 </head>
 <body>
 
 <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark">
-  <a class="navbar-brand text-light" href="index.html">Home</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand text-light" href="index.html">Home</a>
 
-  <!-- Toggler for mobile view -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <!-- Toggler for mobile view -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav mr-auto">
-      
-      <!-- Mental Health Dropdown -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="mentalHealthDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Mental Health
-        </a>
-        <div class="dropdown-menu" aria-labelledby="mentalHealthDropdown">
-          <a class="dropdown-item" href="#">Finding Help</a>
-          <a class="dropdown-item" href="#">Brochures</a>
-          <a class="dropdown-item" href="#">Questionnaire</a>
-        </div>
-      </li>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav me-auto">
+        
+        <!-- Mental Health Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="mentalHealthDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Mental Health
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="mentalHealthDropdown">
+            <li><a class="dropdown-item" href="#">Finding Help</a></li>
+            <li><a class="dropdown-item" href="#">Brochures</a></li>
+            <li><a class="dropdown-item" href="#">Questionnaire</a></li>
+          </ul>
+        </li>
 
-      <!-- Services Dropdown -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Services
-        </a>
-        <div class="dropdown-menu" aria-labelledby="servicesDropdown">
-          <a class="dropdown-item" href="#">Psychiatry</a>
-          <a class="dropdown-item" href="form.html">Book Appointments</a>
-        </div>
-      </li>
+        <!-- Services Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+            <li><a class="dropdown-item" href="#">Psychiatry</a></li>
+            <li><a class="dropdown-item" href="form.html">Book Appointments</a></li>
+          </ul>
+        </li>
 
-      <!-- News Dropdown -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          News
-        </a>
-        <div class="dropdown-menu" aria-labelledby="newsDropdown">
-          <a class="dropdown-item" href="#">Press Releases</a>
-          <a class="dropdown-item" href="#">FAQ</a>
-        </div>
-      </li>
+        <!-- News Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            News
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+            <li><a class="dropdown-item" href="#">Press Releases</a></li>
+            <li><a class="dropdown-item" href="#">FAQ</a></li>
+          </ul>
+        </li>
 
-      <!-- About Dropdown -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          About
-        </a>
-        <div class="dropdown-menu" aria-labelledby="aboutDropdown">
-          <a class="dropdown-item" href="#">About Us</a>
-          <a class="dropdown-item" href="#">Our Team</a>
-          <a class="dropdown-item" href="#">Contact Us</a>
-        </div>
-      </li>
-    </ul>
+        <!-- About Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            About
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+            <li><a class="dropdown-item" href="#">About Us</a></li>
+            <li><a class="dropdown-item" href="#">Our Team</a></li>
+            <li><a class="dropdown-item" href="#">Contact Us</a></li>
+          </ul>
+        </li>
+      </ul>
 
-    <!-- Right-aligned Language Dropdown -->
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Language
-        </a>
-        <div class="dropdown-menu" aria-labelledby="languageDropdown">
-          <a class="dropdown-item" href="#">English</a>
-          <a class="dropdown-item" href="#">French</a>
-        </div>
-      </li>
-    </ul>
+      <!-- Right-aligned Language Dropdown -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Language
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">French</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
-<!-- Bootstrap JS and dependencies (jQuery, Popper.js) -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
