@@ -4,26 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MH-Care - Book Appointment</title>
-    <link rel="stylesheet" href="navbar.css">
-    <!-- <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        header {
-            background-color: #003366;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        nav {
-            background-color: #f4f4f4;
-            padding: 10px;
-        }
-        nav a {
-            margin-right: 15px;
-            text-decoration: none;
-            color: #003366;
-        }
+    <!-- <link rel="stylesheet" href="css/navbar.css"> -->
+    <style>
+
         .container {
             padding: 20px;
         }
@@ -45,7 +28,7 @@
             color: red;
             display: none;
         } 
-    </style> -->
+    </style>
     <script>
         function validateForm() {
             const firstName = document.forms["bookingForm"]["firstName"].value;
@@ -59,7 +42,7 @@
         }
 
         window.onload = function() {
-            fetch('navbar2.html')
+            fetch('navbar.html')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('navbar').innerHTML = data;

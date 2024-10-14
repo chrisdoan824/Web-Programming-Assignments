@@ -1,0 +1,113 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MH-Care - Book Appointment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .container {
+            padding: 20px;
+        }
+        .error {
+            color: red;
+            display: none;
+        }
+    </style>
+    <script>
+function validateForm() {
+            const firstName = document.forms["bookingForm"]["firstName"].value;
+            const lastName = document.forms["bookingForm"]["lastName"].value;
+            const phone = document.forms["bookingForm"]["phone"].value;
+            if (firstName == "" || lastName == "" || phone == "") {
+                document.getElementById("error").style.display = "block";
+                return false;
+            }
+            return true;
+        }
+        window.onload = function() {
+            fetch('test_navbar2.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        }
+
+    </script>
+</head>
+<body>
+    <div id="navbar"></div>
+    <header class="text-center my-4">
+        <h1>Book a Psychiatry Appointment</h1>
+    </header>
+
+    <div class="container">
+        <h2>Fill in the form below to book your appointment:</h2>
+        <form name="bookingForm" onsubmit="return validateForm()">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="firstName">First Name (required)</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" >
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastName">Last Name (required)</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number (required)</label>
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="1234567890" >
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com">
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" name="address">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" id="city" name="city">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="province">Province</label>
+                    <select id="province" class="form-control" name="province">
+                        <option value="ON">Ontario</option>
+                        <option value="QC">Quebec</option>
+                        <!-- Add other provinces -->
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="postalCode">Postal Code</label>
+                <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="A1B 2C3">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="date1">Desired Date 1</label>
+                    <input type="date" class="form-control" id="date1" name="date1">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="date2">Desired Date 2</label>
+                    <input type="date" class="form-control" id="date2" name="date2">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="timeFrame">Desired Time Frame (1-hour blocks)</label>
+                <select id="timeFrame" class="form-control" name="timeFrame">
+                    <option value="9-10am">9:00 AM - 10:00 AM</option>
+                    <option value="10-11am">10:00 AM - 11:00 AM</option>
+                    <!-- Add more time blocks -->
+                </select>
+            </div>
+
+            <p id="error" class="error">Please fill in all required fields (First Name, Last Name, Phone Number).</p>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
