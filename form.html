@@ -95,15 +95,21 @@
                     <label for="date2">Desired Date 2</label>
                     <input type="date" class="form-control" id="date2" name="date2">
                 </div>
+                
             </div>
             <div class="mb-3">
-                <label for="timeFrame">Desired Time Frame (1-hour blocks)</label>
-                <select id="timeFrame" class="form-control" name="timeFrame">
-                    <option value="9-10am">9:00 AM - 10:00 AM</option>
-                    <option value="10-11am">10:00 AM - 11:00 AM</option>
-                    <option value="11-12pm">11:00 AM - 12:00 PM</option>
-                    <!-- Add more time blocks -->
-                </select>
+                <div class="row">
+                    
+                    <!-- Time Block Pickers -->
+                    <div class="col-md-6">
+                        <label for="time1" class="form-label">Desired Time Frame 1 (1-hour block)</label>
+                        <input type="time" class="form-control" id="time1" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="time2" class="form-label">Desired Time Frame 2 (1-hour block)</label>
+                        <input type="time" class="form-control" id="time2" required>
+                    </div>
+                </div>
             </div>
 
             <p id="error" class="error">Please fill in all required fields (First Name, Last Name, Phone Number).</p>
