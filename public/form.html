@@ -35,7 +35,9 @@
                 })
                 .catch(error => console.error('Error loading navbar:', error));
         }
+        
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div id="navbar"></div>
@@ -45,7 +47,7 @@
 
     <div class="container">
         <h2>Fill in the form below to book your appointment:</h2>
-        <form name="bookingForm" onsubmit="return validateForm()">
+        <form id="bookingForm" name="bookingForm" onsubmit="return validateForm()">
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="firstName">First Name (required)</label>
@@ -103,11 +105,11 @@
                     <!-- Time Block Pickers -->
                     <div class="col-md-6">
                         <label for="time1" class="form-label">Desired Time Frame 1 (1-hour block)</label>
-                        <input type="time" class="form-control" id="time1" required>
+                        <input type="time" class="form-control" id="time1" name="time1" required>
                     </div>
                     <div class="col-md-6">
                         <label for="time2" class="form-label">Desired Time Frame 2 (1-hour block)</label>
-                        <input type="time" class="form-control" id="time2" required>
+                        <input type="time" class="form-control" id="time2" name="time2" required>
                     </div>
                 </div>
             </div>
@@ -115,10 +117,35 @@
             <p id="error" class="error">Please fill in all required fields (First Name, Last Name, Phone Number).</p>
 
             <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="error" id="errorMessage"></div>
+            <div class="success" id="successMessage"></div>
         </form>
     </div>
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#bookingForm').on('submit', function (e) {
+                e.preventDefault();
+                
+                const formData = $(this).serialize();  // Serialize form data
+                
+                $.ajax({
+                    url: '/submit',
+                    type: 'POST',
+                    data: formData,
+                    success: function (response) {
+                        $('#successMessage').text(response.message).css('color', 'green').show();
+                        $('#errorMessage').hide();
+                    },
+                    error: function (xhr) {
+                        $('#errorMessage').text(xhr.responseJSON.message).css('color', 'red').show();
+                        $('#successMessage').hide();
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
