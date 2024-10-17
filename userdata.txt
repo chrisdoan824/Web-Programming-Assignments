@@ -1,0 +1,20 @@
+[
+  {
+    "firstName": "test",
+    "lastName": "mctest",
+    "email": "example@domain.com",
+    "date1": "2024-10-21",
+    "timeBlock1": "11:00 - 12:00",
+    "date2": "2024-10-22",
+    "timeBlock2": "11:04 - 12:04"
+  },
+  {
+    "firstName": "test",
+    "lastName": "mctest",
+    "email": "example2@domain.com",
+    "date1": "2024-10-21",
+    "timeBlock1": "00:00 - 01:00",
+    "date2": "2024-10-22",
+    "timeBlock2": "00:03 - 01:03"
+  }
+]
